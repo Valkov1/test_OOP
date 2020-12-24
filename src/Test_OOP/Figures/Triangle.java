@@ -29,10 +29,11 @@ public class Triangle extends BaseFigure {
     public Triangle(){
 
     }
-    public Triangle(int area, int hypotenuse, String color) {
 
+    public Triangle(int area, String color, int hypotenuse) {
+        super(area, color);
+        this.hypotenuse = hypotenuse;
     }
-
 
     @Override
     public String toString() {

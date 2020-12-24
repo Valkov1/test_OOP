@@ -5,15 +5,16 @@ import Test_OOP.Randomizer;
 public class Square extends BaseFigure {
     private int side;
 
-    public Square(int area, int side, String color) {
-    }
 
     @Override
     public void createFigure(){
         side = Randomizer.generateNum();
     }
 
-
+    public Square(int area, String color, int side) {
+        super(area, color);
+        this.side = side;
+    }
 
     public int getSide() {
         return side;

@@ -13,8 +13,9 @@ public class Trapezoid extends BaseFigure {
         height = Randomizer.generateNum();
     }
 
-
-    public Trapezoid(int area, int middleLine, String color) {
+    public Trapezoid(int area, String color, int middleLine) {
+        super(area, color);
+        this.middleLine = middleLine;
     }
 
     public int getMiddleLine() {
@@ -27,6 +28,7 @@ public class Trapezoid extends BaseFigure {
 
     public Trapezoid(){
     }
+
     @Override
     public String toString() {
         return "figure= Trapezoid" +

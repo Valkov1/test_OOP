@@ -13,7 +13,10 @@ public class BaseFigure {
         area = a * b;
         return area;}
 
-
+    public BaseFigure(int area, String color) {
+        this.area = area;
+        this.color = color;
+    }
 
     public BaseFigure() {
     }

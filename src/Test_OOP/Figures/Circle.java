@@ -5,10 +5,6 @@ import Test_OOP.Randomizer;
 public class Circle extends BaseFigure {
     private int radius;
 
-    public Circle(int area, int radius, String color) {
-
-    }
-
 
     @Override
     public int returnArea(){
@@ -26,12 +22,14 @@ public class Circle extends BaseFigure {
     }
 
 
-    public Circle(int radius) {
+    public Circle(int area, String color, int radius) {
+        super(area, color);
         this.radius = radius;
     }
 
     public Circle() {
     }
+
     @Override
     public String toString() {
         return "figure= Circle" +
