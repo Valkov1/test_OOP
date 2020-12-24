@@ -3,8 +3,8 @@ package Test_OOP.Figures;
 import Test_OOP.Randomizer;
 
 public class Square extends BaseFigure {
-    private int side;
 
+    private int side;
 
     @Override
     public void createFigure(){

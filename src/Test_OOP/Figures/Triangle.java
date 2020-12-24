@@ -3,6 +3,7 @@ package Test_OOP.Figures;
 import Test_OOP.Randomizer;
 
 public class Triangle extends BaseFigure {
+
     private int hypotenuse;
     private int side1;
     private int side2;

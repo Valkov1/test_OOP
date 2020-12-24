@@ -3,8 +3,8 @@ package Test_OOP.Figures;
 import Test_OOP.Randomizer;
 
 public class Circle extends BaseFigure {
-    private int radius;
 
+    private int radius;
 
     @Override
     public int returnArea(){
@@ -20,7 +20,6 @@ public class Circle extends BaseFigure {
     public int getRadius() {
         return radius;
     }
-
 
     public Circle(int area, String color, int radius) {
         super(area, color);

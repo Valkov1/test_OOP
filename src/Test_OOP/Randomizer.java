@@ -13,8 +13,8 @@ public class Randomizer {
         color = colors[(int) (Math.random() * 10)];
         return color;
     }
-    public static String generateTypeOfFigure(){
 
+    public static String generateTypeOfFigure(){
         int x = (int) (Math.random() * 10);
         if(x>3){
             x=-3;

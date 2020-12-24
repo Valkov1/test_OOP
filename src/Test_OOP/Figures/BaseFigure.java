@@ -5,8 +5,8 @@ public class BaseFigure {
     public String color;
 
     public void createFigure(){
-
     }
+
     public int returnArea() {return area;}
 
     public int returnAreaOfSquareOrTrapezoid(int a, int b) {

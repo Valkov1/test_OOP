@@ -16,8 +16,6 @@ public class Main {
 
         int numOfFigures = Randomizer.generateNum();
 
-
-
         for (int i = 0;i < numOfFigures; i++){
               String figure = Randomizer.generateTypeOfFigure();
 
@@ -46,8 +44,8 @@ public class Main {
                       square.color = Randomizer.generateColor();
                       figures.add(new Square(square.area,square.color,square.getSide()));
                       break;
-
               }
+
             for(BaseFigure s : figures){
                 System.out.println(s);
             }
