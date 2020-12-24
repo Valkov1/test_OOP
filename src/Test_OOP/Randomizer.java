@@ -16,12 +16,10 @@ public class Randomizer {
 
     public static String generateTypeOfFigure(){
         int x = (int) (Math.random() * 10 - 3);
-        if(x>3){
+        if(x>6){
             x=-3;
         }
-        if(x>3){
-            x=-3;
-        }
+
         String figure;
         switch (x){
             case 1:
