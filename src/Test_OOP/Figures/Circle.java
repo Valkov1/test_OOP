@@ -4,36 +4,26 @@ import Test_OOP.Randomizer;
 
 public class Circle extends BaseFigure {
 
-    private int radius;
-
-    @Override
-    public int returnArea(){
-        area = radius*radius*3;
-        return area;
-    }
-
-    @Override
-    public void createFigure(){
-        radius = Randomizer.generateNum();
-    }
-
-    public int getRadius() {
-        return radius;
-    }
-
-    public Circle(int area, String color, int radius) {
-        super(area, color);
-        this.radius = radius;
-    }
+    private double radius;
 
     public Circle() {
+        super(Randomizer.generateColor());
+        this.radius = Randomizer.generateNum();
+        calc();
+    }
+
+    private void calc(){
+        this.setArea(Math.pow(radius,2)* 3.14);
+    }
+
+    public double getRadius() {
+        return radius;
     }
 
     @Override
     public String toString() {
-        return "figure= Circle" +
-                ", radius=" + radius +
-                ", area=" + area +
-                ", color=" + color;
+        return String.format("figure= Circle" +
+                        ", area= %.2f, radius= %.2f, color= %s",
+                getArea(),radius,getColor());
     }
 }

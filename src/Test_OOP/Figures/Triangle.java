@@ -4,43 +4,45 @@ import Test_OOP.Randomizer;
 
 public class Triangle extends BaseFigure {
 
-    private int hypotenuse;
-    private int side1;
-    private int side2;
+    private double hypotenuse;
+    private double side1;
+    private double side2;
 
-
-    @Override
-    public void createFigure(){
-        side1 = Randomizer.generateNum();
-        side2 = Randomizer.generateNum();
-        hypotenuse = Randomizer.generateNum();
+    private void calc(){
+        this.setArea((side1 * side2)/2);
+        this.hypotenuse = Math.sqrt(Math.pow(side1,2) + Math.pow(side2,2));
     }
 
-    @Override
-    public int returnArea() {
-        area = (side1*side2)/2;
-        return area;
+    public Triangle(){//конструктор с случ числами
+        super(Randomizer.generateColor());
+        this.side1 = Randomizer.generateNum();
+        this.side2 = Randomizer.generateNum();
+        calc();
     }
 
+    public Triangle(int side1, int side2, String color) {//конструктор с параметрами
+        super(color);
+        this.side1 = side1;
+        this.side2 = side2;
+        calc();
+    }
 
-    public int getHypotenuse() {
+    public double getHypotenuse() {
         return hypotenuse;
     }
 
-    public Triangle(){
-
+    public double getSide1() {
+        return side1;
     }
 
-    public Triangle(int area, String color, int hypotenuse) {
-        super(area, color);
-        this.hypotenuse = hypotenuse;
+    public double getSide2() {
+        return side2;
     }
 
     @Override
     public String toString() {
-        return "figure= Triangle" +
-                ", hypotenuse=" + hypotenuse +
-                ", area=" + area +
-                ", color=" + color;
+        return String.format("figure= Triangle" +
+                ", hypotenuse= %.2f, area= %.2f, side1= %.2f, side2= %.2f, color= %s",
+                hypotenuse, getArea(),side1,side2,getColor());
     }
 }

@@ -4,36 +4,32 @@ import Test_OOP.Randomizer;
 
 public class Trapezoid extends BaseFigure {
 
-    private int middleLine;
-    private int height;
+    private double middleLine;
+    private double height;
 
-    @Override
-    public void createFigure(){
-        middleLine = Randomizer.generateNum();
-        height = Randomizer.generateNum();
+    public Trapezoid() {
+        super(Randomizer.generateColor());
+        this.middleLine = Randomizer.generateNum();
+        this.height = Randomizer.generateNum();
+        calc();
     }
 
-    public Trapezoid(int area, String color, int middleLine) {
-        super(area, color);
-        this.middleLine = middleLine;
+    private void calc(){
+        this.setArea(middleLine*height);
     }
 
-    public int getMiddleLine() {
+    public double getMiddleLine() {
         return middleLine;
     }
 
-    public int getHeight() {
+    public double getHeight() {
         return height;
-    }
-
-    public Trapezoid(){
     }
 
     @Override
     public String toString() {
-        return "figure= Trapezoid" +
-                ", middle line=" + middleLine +
-                ", area=" + area +
-                ", color=" + color;
+        return String.format("figure= Trapezoid" +
+                        ", area= %.2f, middleLine= %.2f, height= %.2f, color= %s",
+                getArea(),middleLine,height,getColor());
     }
 }

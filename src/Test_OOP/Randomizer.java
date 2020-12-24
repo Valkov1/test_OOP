@@ -3,7 +3,7 @@ package Test_OOP;
 public class Randomizer {
 
     public static int generateNum(){
-        return (int) (Math.random() * 10);
+        return (int) (Math.random() * 10 + 1);
     }
 
     public static String generateColor(){
@@ -15,10 +15,7 @@ public class Randomizer {
     }
 
     public static String generateTypeOfFigure(){
-        int x = (int) (Math.random() * 10);
-        if(x>3){
-            x=-3;
-        }
+        int x = (int) (Math.random() * 10 - 3);
         if(x>3){
             x=-3;
         }

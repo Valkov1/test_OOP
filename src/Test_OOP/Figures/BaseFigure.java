@@ -1,24 +1,30 @@
 package Test_OOP.Figures;
 
 public class BaseFigure {
-    public int area;
-    public String color;
+    private double area;
+    private String color;
 
-    public void createFigure(){
+    public BaseFigure() {
     }
 
-    public int returnArea() {return area;}
-
-    public int returnAreaOfSquareOrTrapezoid(int a, int b) {
-        area = a * b;
-        return area;}
-
-    public BaseFigure(int area, String color) {
-        this.area = area;
+    public BaseFigure(String color) {
         this.color = color;
     }
 
-    public BaseFigure() {
+    public void setArea(double area) {
+        this.area = area;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
+    }
+
+    public double getArea() {
+        return area;
+    }
+
+    public String getColor() {
+        return color;
     }
 
 }

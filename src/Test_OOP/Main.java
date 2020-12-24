@@ -7,10 +7,6 @@ import java.util.ArrayList;
 public class Main {
     public static void main(String[] args) {
 
-        Square square = new Square();
-        Triangle triangle = new Triangle();
-        Trapezoid trapezoid = new Trapezoid();
-        Circle circle = new Circle();
 
         ArrayList<BaseFigure> figures = new ArrayList<>();
 
@@ -21,36 +17,22 @@ public class Main {
 
               switch (figure){
                   case "Triangle":
-                      triangle.createFigure();
-                      triangle.area = triangle.returnArea();
-                      triangle.color = Randomizer.generateColor();
-                      figures.add(new Triangle(triangle.area,triangle.color,triangle.getHypotenuse()));
+                      figures.add(new Triangle());
                       break;
                   case "Trapezoid":
-                      trapezoid.createFigure();
-                      trapezoid.area = trapezoid.returnAreaOfSquareOrTrapezoid(trapezoid.getMiddleLine(),trapezoid.getHeight());
-                      trapezoid.color = Randomizer.generateColor();
-                      figures.add(new Trapezoid(trapezoid.area,trapezoid.color,trapezoid.getMiddleLine()));
+                      figures.add(new Trapezoid());
                       break;
                   case "Circle":
-                      circle.createFigure();
-                      circle.area = circle.returnArea();
-                      triangle.color = Randomizer.generateColor();
-                      figures.add(new Circle(circle.area,circle.color,circle.getRadius()));
+                      figures.add(new Circle());
                       break;
                   case "Square":
-                      square.setSide(Randomizer.generateNum());
-                      square.area = square.returnAreaOfSquareOrTrapezoid(square.getSide(),square.getSide());
-                      square.color = Randomizer.generateColor();
-                      figures.add(new Square(square.area,square.color,square.getSide()));
+                      figures.add(new Square());
                       break;
               }
-
-            for(BaseFigure s : figures){
-                System.out.println(s);
-            }
         }
-
+        for(BaseFigure s : figures){
+            System.out.println(s);
+        }
 
     }
 }

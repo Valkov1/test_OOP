@@ -4,34 +4,22 @@ import Test_OOP.Randomizer;
 
 public class Square extends BaseFigure {
 
-    private int side;
-
-    @Override
-    public void createFigure(){
-        side = Randomizer.generateNum();
-    }
-
-    public Square(int area, String color, int side) {
-        super(area, color);
-        this.side = side;
-    }
-
-    public int getSide() {
-        return side;
-    }
-
-    public void setSide(int side) {
-        this.side = side;
-    }
+    private double side;
 
     public Square() {
+        super(Randomizer.generateColor());
+        this.side = Randomizer.generateNum();
+        calc();
+    }
+
+    private void calc(){
+        this.setArea(side * side);
     }
 
     @Override
     public String toString() {
-        return "figure= Square" +
-                ", side=" + side +
-                ", area=" + area +
-                ", color=" + color;
+        return String.format("figure= Square" +
+                        ", area= %.2f, side= %.2f, color= %s",
+                        getArea(),side,getColor());
     }
 }
