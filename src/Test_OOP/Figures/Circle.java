@@ -4,20 +4,20 @@ import Test_OOP.Randomizer;
 
 public class Circle extends BaseFigure {
 
-    private double radius;
+    private final double radius;
 
     public Circle() {
-        super(Randomizer.generateColor());
-        this.radius = Randomizer.generateNum();
-        calc();
-    }
-
-    private void calc(){
-        this.setArea(Math.pow(radius,2)* 3.14);
+        super(Randomizer.randomColor());
+        this.radius = Randomizer.randomNum();
     }
 
     public double getRadius() {
         return radius;
+    }
+
+    @Override
+    double getArea(){
+        return Math.pow(radius,2)* 3.14;
     }
 
     @Override

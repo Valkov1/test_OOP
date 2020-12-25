@@ -2,26 +2,25 @@ package Test_OOP;
 
 public class Randomizer {
 
-    public static int generateNum(){
-        return (int) (Math.random() * 10 + 1);
+    public static int randomNum(){
+        return getRandomInt(1,10);
     }
 
-    public static String generateColor(){
+    public static int getRandomInt(int min, int max){
+        return (int)((Math.random()*(max - min))+min);//[min;max)
+    }
+
+    public static String randomColor(){
         String color;
         String [] colors = {"red","blue","green","white","black","yellow",
                 "purple","grey","orange","pink"};
-        color = colors[(int) (Math.random() * 10)];
+        color = colors[getRandomInt(1,10)];
         return color;
     }
 
-    public static String generateTypeOfFigure(){
-        int x = (int) (Math.random() * 10 - 3);
-        if(x>6){
-            x=-3;
-        }
-
+    public static String randomTypeOfFigure(){
         String figure;
-        switch (x){
+        switch (getRandomInt(1,5)){
             case 1:
                 figure = "Triangle";
                 break;

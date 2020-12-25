@@ -1,29 +1,16 @@
 package Test_OOP.Figures;
 
-public class BaseFigure {
-    private double area;
-    private String color;
+public abstract class BaseFigure {
 
-    public BaseFigure() {
-    }
+    private final String color;
 
-    public BaseFigure(String color) {
+    BaseFigure(String color) {
         this.color = color;
     }
 
-    public void setArea(double area) {
-        this.area = area;
-    }
+    abstract double getArea();
 
-    public void setColor(String color) {
-        this.color = color;
-    }
-
-    public double getArea() {
-        return area;
-    }
-
-    public String getColor() {
+    String getColor() {
         return color;
     }
 

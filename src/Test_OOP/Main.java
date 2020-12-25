@@ -7,13 +7,12 @@ import java.util.ArrayList;
 public class Main {
     public static void main(String[] args) {
 
-
         ArrayList<BaseFigure> figures = new ArrayList<>();
 
-        int numOfFigures = Randomizer.generateNum();
+        int numOfFigures = Randomizer.randomNum();
 
         for (int i = 0;i < numOfFigures; i++){
-              String figure = Randomizer.generateTypeOfFigure();
+              String figure = Randomizer.randomTypeOfFigure();
 
               switch (figure){
                   case "Triangle":
@@ -30,6 +29,7 @@ public class Main {
                       break;
               }
         }
+
         for(BaseFigure s : figures){
             System.out.println(s);
         }

@@ -4,16 +4,20 @@ import Test_OOP.Randomizer;
 
 public class Square extends BaseFigure {
 
-    private double side;
+    private final double side;
 
     public Square() {
-        super(Randomizer.generateColor());
-        this.side = Randomizer.generateNum();
-        calc();
+        super(Randomizer.randomColor());
+        this.side = Randomizer.randomNum();
     }
 
-    private void calc(){
-        this.setArea(side * side);
+    public double getSide() {
+        return side;
+    }
+
+    @Override
+    double getArea(){
+        return side * side;
     }
 
     @Override

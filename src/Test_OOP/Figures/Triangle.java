@@ -4,31 +4,22 @@ import Test_OOP.Randomizer;
 
 public class Triangle extends BaseFigure {
 
-    private double hypotenuse;
-    private double side1;
-    private double side2;
-
-    private void calc(){
-        this.setArea((side1 * side2)/2);
-        this.hypotenuse = Math.sqrt(Math.pow(side1,2) + Math.pow(side2,2));
-    }
+    private final double side1;
+    private final double side2;
 
     public Triangle(){//конструктор с случ числами
-        super(Randomizer.generateColor());
-        this.side1 = Randomizer.generateNum();
-        this.side2 = Randomizer.generateNum();
-        calc();
+        super(Randomizer.randomColor());
+        this.side1 = Randomizer.randomNum();
+        this.side2 = Randomizer.randomNum();
     }
 
-    public Triangle(int side1, int side2, String color) {//конструктор с параметрами
-        super(color);
-        this.side1 = side1;
-        this.side2 = side2;
-        calc();
+    @Override
+    double getArea(){
+        return (side1 * side2)/2;
     }
 
     public double getHypotenuse() {
-        return hypotenuse;
+        return Math.sqrt(Math.pow(side1,2) + Math.pow(side2,2));
     }
 
     public double getSide1() {
@@ -43,6 +34,6 @@ public class Triangle extends BaseFigure {
     public String toString() {
         return String.format("figure= Triangle" +
                 ", hypotenuse= %.2f, area= %.2f, side1= %.2f, side2= %.2f, color= %s",
-                hypotenuse, getArea(),side1,side2,getColor());
+                getHypotenuse(), getArea(),side1,side2,getColor());
     }
 }
